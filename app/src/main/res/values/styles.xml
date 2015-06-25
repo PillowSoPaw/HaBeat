@@ -4,14 +4,19 @@
     <style name="AppTheme" parent="AppTheme.Base">
         <!-- Customize your theme here. -->
     </style>
-    
-    <style name="AppTheme.Base" parent = "Theme.AppCompat.Light">
+    <!--the appbar in general like background color etc. not its contents!-->
+    <style name="AppTheme.Base" parent = "Theme.AppCompat.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
-        <!--<item name="android:colorPrimary"></item>-->
-        <!--<item name="android:colorPrimaryDark"></item>-->
-        <!--<item name="android:colorAccent"></item>-->
+        <item name="android:colorPrimary">@color/primaryColor</item>
+        <item name="android:colorPrimaryDark">@color/primaryColorDark</item>
+        <item name="android:colorAccent">@color/accentColor</item>
 
+    </style>
+    <!--edit this section if you want to style the app bar contents-->
+    <style name="customToolbarTheme" parent="ThemeOverlay.AppCompat.Light">
+        <item name="android:textColorPrimary">#F00</item>
+        <item name = "android:textColorSecondary">#00F</item>
     </style>
 
 </resources>
