@@ -7,16 +7,22 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import java.util.ArrayList;
+import java.util.List;
 
 
 /**
  * A simple {@link Fragment} subclass.
  */
 public class NavigationDrawerFragment extends Fragment {
+    private RecyclerView recyclerView;
 
     private ActionBarDrawerToggle mDrawerToggle;
     private DrawerLayout mDrawerLayout;
@@ -31,6 +37,8 @@ public class NavigationDrawerFragment extends Fragment {
     private boolean isNotFirstTime;
     //this is just a holder for the view we want to edit
     private View containerView;
+
+    private RVAdapter adapter;
 
     public NavigationDrawerFragment() {
         // Required empty public constructor
@@ -50,9 +58,23 @@ public class NavigationDrawerFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_navigation_drawer, container, false);
+        View layout =  inflater.inflate(R.layout.fragment_navigation_drawer, container, false);
+        recyclerView = (RecyclerView) layout.findViewById(R.id.drawer_list);
+        adapter = new RVAdapter(getActivity(),getData());
+        recyclerView.setAdapter(adapter);
+        recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+        return layout;
     }
 
+    public List<String> getData(){
+        List<String> data = new ArrayList<>();
+        String[] listItems = {"Support Group","Statistics","Leaderboards","Settings"};
+        for (int i = 0 ; i<listItems.length; i++){
+            data.add(listItems[i]);
+        }
+
+        return data;
+    }
 
     public void setUp(int fragmentId, DrawerLayout drawerLayout, Toolbar toolbar) {
         containerView = getActivity().findViewById(fragmentId);
