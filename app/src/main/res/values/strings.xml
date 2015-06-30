@@ -10,4 +10,10 @@
     <string name="drawer_open">Open</string>
     <string name="drawer_close">Close</string>
 
+    <string name="drawerItem1">Support Group</string>
+    <string name="drawerItem2">Statistics</string>
+    <string name="drawerItem3">Leaderboards</string>
+    <string name="drawerItem4">Settings</string>
+    <string name="drawerItem5">Home</string>
+
 </resources>

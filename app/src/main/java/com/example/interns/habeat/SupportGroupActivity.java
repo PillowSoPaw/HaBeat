@@ -4,6 +4,8 @@ import android.app.Activity;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.Menu;
@@ -24,8 +26,8 @@ import com.example.interns.habeat.model.DatabaseHandler;
 import java.util.ArrayList;
 import java.util.List;
 
-public class SupportGroupActivity extends Activity {
-
+public class SupportGroupActivity extends AppCompatActivity {
+    private Toolbar mToolbar;
     EditText nameTxt, phoneTxt, emailTxt, addressTxt;
     ImageView contactImageImgView;
     List<Contact> Contacts = new ArrayList<Contact>();
@@ -33,10 +35,15 @@ public class SupportGroupActivity extends Activity {
     Uri imageUri = Uri.parse("android.resource://org.intracode.contactmanager/drawable/no_user_logo.png");
     DatabaseHandler dbHandler;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_supportgroup);
+
+        mToolbar = (Toolbar) findViewById(R.id.app_bar);
+        setSupportActionBar(mToolbar);
+
 
         nameTxt = (EditText) findViewById(R.id.txtName);
         phoneTxt = (EditText) findViewById(R.id.txtPhone);
