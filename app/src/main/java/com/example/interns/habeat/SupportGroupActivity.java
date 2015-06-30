@@ -2,13 +2,19 @@ package com.example.interns.habeat;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.design.widget.NavigationView;
+import android.support.v4.view.GravityCompat;
+import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
@@ -26,8 +32,11 @@ import com.example.interns.habeat.model.DatabaseHandler;
 import java.util.ArrayList;
 import java.util.List;
 
-public class SupportGroupActivity extends AppCompatActivity {
+public class SupportGroupActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     private Toolbar mToolbar;
+    private DrawerLayout drawerLayout;
+    private ActionBarDrawerToggle drawerToggle;
+    private NavigationView drawer;
     EditText nameTxt, phoneTxt, emailTxt, addressTxt;
     ImageView contactImageImgView;
     List<Contact> Contacts = new ArrayList<Contact>();
@@ -41,9 +50,16 @@ public class SupportGroupActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_supportgroup);
 
-        mToolbar = (Toolbar) findViewById(R.id.app_bar);
+        mToolbar = (Toolbar) findViewById(R.id.appbar);
         setSupportActionBar(mToolbar);
 
+        drawer = (NavigationView) findViewById(R.id.main_drawer);
+        drawer.setNavigationItemSelectedListener(this);
+        drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
+        drawerToggle = new ActionBarDrawerToggle(this,drawerLayout,mToolbar,R.string.drawer_open,R.string.drawer_close);
+
+        drawerLayout.setDrawerListener(drawerToggle);
+        drawerToggle.syncState();
 
         nameTxt = (EditText) findViewById(R.id.txtName);
         phoneTxt = (EditText) findViewById(R.id.txtPhone);
@@ -141,6 +157,19 @@ public class SupportGroupActivity extends AppCompatActivity {
         contactListView.setAdapter(adapter);
     }
 
+    @Override
+    public boolean onNavigationItemSelected(MenuItem menuItem) {
+        Intent intent = null;
+
+        if(menuItem.getItemId() == R.id.drawerItem1){
+            drawerLayout.closeDrawer(GravityCompat.START);
+            intent = new Intent(this,SupportGroupActivity.class);
+            startActivity(intent);
+            return true;
+        }
+        return false;
+    }
+
     private class ContactListAdapter extends ArrayAdapter<Contact> {
         public ContactListAdapter() {
             super (SupportGroupActivity.this, R.layout.listview_item, Contacts);
@@ -172,6 +201,10 @@ public class SupportGroupActivity extends AppCompatActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.main, menu);
         return true;
+    }
+    public void onConfigurationChanged(Configuration newConfig) {
+        super.onConfigurationChanged(newConfig);
+        drawerToggle.onConfigurationChanged(newConfig);
     }
     
 }
