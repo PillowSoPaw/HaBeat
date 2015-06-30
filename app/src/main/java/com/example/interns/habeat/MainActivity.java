@@ -10,8 +10,19 @@ import android.os.Bundle;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.RadioGroup;
+import android.widget.Toast;
+
+import com.example.interns.habeat.model.DatabaseHandler;
+import com.example.interns.habeat.sms.SmsManager;
+import com.example.interns.habeat.model.Contact;
+import com.example.interns.habeat.CravingType;
+import com.example.interns.habeat.R;
+import com.example.interns.habeat.SupportGroupActivity;
 
 //this is the main screen of the app
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
@@ -20,7 +31,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private NavigationView drawer;
     private DrawerLayout drawerLayout;
     private  ActionBarDrawerToggle drawerToggle;
-
+    private SmsManager smsManager;
+    private RadioGroup radioGroup;
+    private CravingType selectedCravingType;
+    private DatabaseHandler databaseHandler;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,6 +51,30 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         drawerLayout.setDrawerListener(drawerToggle);
         drawerToggle.syncState();
+
+        smsManager = new SmsManager(this);
+        databaseHandler = new DatabaseHandler(this);
+
+        selectedCravingType = CravingType.CIGARETTE;
+        radioGroup = (RadioGroup) findViewById(R.id.radioGroup);
+        radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                switch (checkedId) {
+                    case R.id.cigaretteRadioBtn: {
+                        selectedCravingType = CravingType.CIGARETTE;
+                        Log.e("MainActivity.java", "Cigarette craving type selected.");
+                        break;
+                    }
+
+                    case R.id.alcoholRadioBtn: {
+                        selectedCravingType = CravingType.ALCOHOL;
+                        Log.e("MainActivity.java", "Alchohol craving type selected.");
+                        break;
+                    }
+                }
+            }
+        });
 
 //        //makes the drawer open at application start
 //        getSupportActionBar().setDisplayShowHomeEnabled(true);
@@ -89,5 +127,17 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             return true;
         }
         return false;
+    }
+
+    public void onClickCravingBtn(View view) {
+        notifySupportGroup();
+        Intent intent = new Intent(getApplicationContext(), selectedCravingType.randomActivity());
+        startActivity(intent);
+    }
+
+    private void notifySupportGroup() {
+        smsManager.sendToAll(databaseHandler.getAllContacts().toArray(new Contact[databaseHandler.getContactsCount()]), "<User> is having a craving and needs your help");
+        Toast.makeText(getApplicationContext(),
+                "Your support group has been notified", Toast.LENGTH_SHORT).show();
     }
 }

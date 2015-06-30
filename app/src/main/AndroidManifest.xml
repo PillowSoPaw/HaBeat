@@ -23,6 +23,23 @@
             android:parentActivityName = ".MainActivity"
             android:theme = "@style/AppTheme">
         </activity>
+        <activity
+            android:name=".selfhelp.deepbreathing.DeepBreathingActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/title_activity_deep_breathing"
+            android:theme="@style/FullscreenTheme" >
+        </activity>
+        <activity
+            android:name=".selfhelp.urgesurfing.UrgeSurfingActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/title_activity_urge_surfing"
+            android:theme="@style/FullscreenTheme" >
+        </activity>
+        <activity
+            android:name=".selfhelp.selfmassage.SelfMassageActivity"
+            android:label="@string/title_activity_self_massage" >
+        </activity>
+
     </application>
 
 
