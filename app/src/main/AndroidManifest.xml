@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.interns.habeat" >
+    package="com.habeat" >
 
     <!--Needed User Permissions-->
     <uses-permission android:name="android.permission.SEND_SMS" />
@@ -21,7 +21,7 @@
         </activity>
 
         <activity
-            android:name = ".SupportGroupActivity"
+            android:name = ".supportgroup.SupportGroupActivity"
             android:label = "SupportGroupActivity"
             android:parentActivityName = ".MainActivity"
             android:theme = "@style/AppTheme">
