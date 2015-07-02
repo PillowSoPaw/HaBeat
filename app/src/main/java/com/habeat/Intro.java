@@ -1,4 +1,4 @@
-package com.example.interns.habeat;
+package com.habeat;
 
 import android.content.Intent;
 import android.os.Bundle;

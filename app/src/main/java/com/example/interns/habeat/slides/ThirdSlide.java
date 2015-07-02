@@ -6,7 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.interns.habeat.R;
+import com.habeat.R;
 
 
 public class ThirdSlide extends Fragment {
