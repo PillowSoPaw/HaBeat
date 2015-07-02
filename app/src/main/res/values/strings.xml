@@ -1,21 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
     <string name="app_name">HaBEAT</string>
-
-    <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
-
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="drawer_open">Open</string>
     <string name="drawer_close">Close</string>
 
     <string name="back_btn_lbl">Back to Main</string>
 
     <string name="title_activity_deep_breathing">HaBEAT - Deep Breathing Activity</string>
-
     <string name="title_activity_self_massage">HaBEAT - Self Massage Activity</string>
-
     <string name="title_activity_urge_surfing">Urge Surfing Activity</string>
 
     <string name="drawerItem1">Support Group</string>
@@ -24,5 +18,40 @@
     <string name="drawerItem4">Settings</string>
     <string name="drawerItem5">Home</string>
     <string name="skip">You pressed skip</string>
+
+    <string name="massage_desc_1">
+        The heels of your hands do a lot of hard work and
+        don\'t get nearly as much attention as your fingers do. Rub them in gentle
+        circular motions, beginning on the side furthest from your thumb and working
+        your way across.
+    </string>
+    <string name="massage_desc_2">
+        The web of muscle connecting your thumb to the rest of your hand does a lot of
+        stretching across the keyboard. Grasp it between your thumb and forefinger and
+        move it gently up and down to facilitate release and muscle relaxation.
+    </string>
+    <string name="massage_desc_3">
+        Massaging the muscles and joints at the bases of your fingers can really soothe
+        soreness and help relieve cramps. Use a circular stroke, similar to the one you
+        did for the heels of your hands.
+    </string>
+    <string name="massage_desc_4">
+        The outer sides of your hands need attention, too. Use an upward circular stroke
+        to go from the base of your hand up to the finger joints.
+    </string>
+    <string name="massage_desc_5">
+        Gently pulling on your fingers (never pull hard) stretches the muscles and gives
+        joints some much-needed relief.
+    </string>
+    <string name="massage_desc_6">
+        Knit your fingers together and pull gently to stretch and release the muscles in
+        your hands. For the most relaxation, focus on making the muscles in your palms stretch
+        instead of those in your fingers.
+    </string>
+    <string name="massage_desc_7">
+        Don\'t forget your wrists. Position your hand as if you were about to take your own pulse,
+        but instead move all your digits in a soft circular motion, moving from one side of your
+        wrist to the other. Repeat all of the above strokes if desired.
+    </string>
 
 </resources>

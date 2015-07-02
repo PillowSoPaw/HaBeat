@@ -11,7 +11,7 @@
     <!--android:layout_gravity="start"-->
     <!--android:id="@+id/fragment_nav_drawer"-->
     <!--app:layout="@layout/fragment_navigation_drawer"-->
-    <!--android:name="com.example.interns.habeat.NavigationDrawerFragment"-->
+    <!--android:name="com.habeat.NavigationDrawerFragment"-->
     <!--tools:layout="@layout/fragment_navigation_drawer" />-->
 
     <LinearLayout

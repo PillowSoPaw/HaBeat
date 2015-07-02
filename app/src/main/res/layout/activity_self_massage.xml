@@ -25,7 +25,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="top"
-                android:background="#dddddd"
+                android:background="#ffdd003a"
                 android:textColor="#fff"
                 android:paddingTop="4dp"
                 android:paddingBottom="4dp" />
@@ -42,6 +42,7 @@
         android:id="@+id/button2"
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignParentEnd="true"
+        android:onClick="onClickBackBtn" />
 
 </RelativeLayout>
