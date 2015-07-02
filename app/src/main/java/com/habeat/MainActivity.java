@@ -14,12 +14,18 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.RadioGroup;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.habeat.data.SQLiteContactDAO;
+import com.habeat.data.SQLiteCravingDAO;
 import com.habeat.sms.SmsManager;
 import com.habeat.supportgroup.Contact;
 import com.habeat.supportgroup.SupportGroupActivity;
+
+import org.joda.time.DateTime;
+
+import java.util.List;
 
 //this is the main screen of the app
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
@@ -83,6 +89,30 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 //        drawerFragment.setUp(R.id.fragment_nav_drawer,(DrawerLayout) findViewById(R.id.drawer_layout), toolbar);
 
         PACKAGE_NAME = getApplicationContext().getPackageName();
+        updateStatistics();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        updateStatistics();
+    }
+
+
+    private void updateStatistics() {
+        SQLiteContactDAO sqLiteContactDAO = new SQLiteContactDAO(this);
+        TextView contactCountText = (TextView) findViewById(R.id.main_contact_count);
+        contactCountText.setText("Support group has " + sqLiteContactDAO.getContactsCount() + " contacts");
+
+        SQLiteCravingDAO sqLiteCravingDAO = new SQLiteCravingDAO(this);
+        TextView lastCravingText = (TextView) findViewById(R.id.main_last_craving);
+        //List<Craving> cravingList = sqLiteCravingDAO.getAllCravings();
+        Craving lastCraving = sqLiteCravingDAO.getLastCraving();
+        lastCravingText.setText((lastCraving == null)
+                ? "Never had a craving"
+                : "Last craving " + SQLiteCravingDAO
+                    .convertDateTime(lastCraving.getDateTime()));
+
     }
 
     @Override
@@ -128,6 +158,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     }
 
     public void onClickCravingBtn(View view) {
+        SQLiteCravingDAO sqLiteCravingDAO = new SQLiteCravingDAO(this);
+        Craving craving = new Craving(selectedCravingType, new DateTime());
+        sqLiteCravingDAO.createCraving(craving);
+
         notifySupportGroup();
         Intent intent = new Intent(getApplicationContext(), selectedCravingType.randomActivity());
         startActivity(intent);

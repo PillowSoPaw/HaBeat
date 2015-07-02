@@ -14,15 +14,15 @@ import java.util.List;
 
 public class SQLiteContactDAO extends SQLiteOpenHelper {
     private static final int DATABASE_VERSION = 1;
+    private static final String DATABASE_NAME = "contactManager";
 
-    private static final String DATABASE_NAME = "contactManager",
-    TABLE_CONTACTS = "contacts",
-    KEY_ID = "id",
-    KEY_NAME = "name",
-    KEY_PHONE = "phone",
-    KEY_EMAIL = "email",
-    KEY_ADDRESS = "address",
-    KEY_IMAGEURI = "imageUri";
+    private static final String TABLE_CONTACTS = "contacts";
+    private static final String KEY_ID = "id";
+    private static final String KEY_NAME = "name";
+    private static final String KEY_PHONE = "phone";
+    private static final String KEY_EMAIL = "email";
+    private static final String KEY_ADDRESS = "address";
+    private static final String KEY_IMAGEURI = "imageUri";
 
     public SQLiteContactDAO(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);

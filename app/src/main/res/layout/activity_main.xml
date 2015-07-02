@@ -69,8 +69,8 @@
                 android:orientation="horizontal"
                 android:id="@+id/radioGroup"
                 android:layout_above="@+id/cravingBtn"
-                android:layout_alignRight="@+id/lastCravingTxt"
-                android:layout_alignEnd="@+id/lastCravingTxt"
+                android:layout_alignRight="@+id/main_last_craving"
+                android:layout_alignEnd="@+id/main_last_craving"
                 android:layout_marginBottom="42dp">
 
             </RadioGroup>
@@ -80,7 +80,7 @@
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:text="Last craving 2 hours ago"
-                android:id="@+id/lastCravingTxt"
+                android:id="@+id/main_last_craving"
                 android:layout_marginTop="42dp"
                 android:layout_below="@+id/cravingBtn"
                 android:layout_centerHorizontal="true" />
@@ -90,8 +90,8 @@
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:text="Support group has 3 contacts"
-                android:id="@+id/supportGroupCntTxt"
-                android:layout_below="@+id/lastCravingTxt"
+                android:id="@+id/main_contact_count"
+                android:layout_below="@+id/main_last_craving"
                 android:layout_alignRight="@+id/cravingBtn"
                 android:layout_alignEnd="@+id/cravingBtn" />
 
