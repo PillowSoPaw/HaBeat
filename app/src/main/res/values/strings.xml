@@ -23,5 +23,6 @@
     <string name="drawerItem3">Leaderboards</string>
     <string name="drawerItem4">Settings</string>
     <string name="drawerItem5">Home</string>
+    <string name="skip">You pressed skip</string>
 
 </resources>
