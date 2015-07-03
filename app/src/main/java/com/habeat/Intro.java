@@ -5,10 +5,10 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
 
-import com.example.interns.habeat.slides.FirstSlide;
-import com.example.interns.habeat.slides.FourthSlide;
-import com.example.interns.habeat.slides.SecondSlide;
-import com.example.interns.habeat.slides.ThirdSlide;
+import com.habeat.slides.FirstSlide;
+import com.habeat.slides.FourthSlide;
+import com.habeat.slides.SecondSlide;
+import com.habeat.slides.ThirdSlide;
 import com.github.paolorotolo.appintro.AppIntro;
 
 

@@ -5,6 +5,8 @@
     <!--Needed User Permissions-->
     <uses-permission android:name="android.permission.SEND_SMS" />
     <uses-permission android:name="android.permission.VIBRATE" />
+    <!--Handles an exception on Seaver's device-->
+    <uses-permission android:name="android.permission.INTERACT_ACROSS_USERS_FULL"/>
 
     <application
         android:allowBackup="true"

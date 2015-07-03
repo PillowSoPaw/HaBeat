@@ -1,4 +1,4 @@
-package com.example.interns.habeat.slides;
+package com.habeat.slides;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
