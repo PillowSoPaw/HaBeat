@@ -1,23 +1,27 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
     android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin"
     tools:context="com.jtbmilan.habeat.selfhelp.selfmassage.SelfMassageActivity"
-    android:background="#fffff9ef">
+    android:background="#fffff9ef"
+    android:orientation="vertical"
+    android:id="@+id/">
 
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_above="@+id/button2"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:id="@+id/meh"
+
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true">
 
         <android.support.v4.view.ViewPager
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:id="@+id/viewPager">
 
             <android.support.v4.view.PagerTitleStrip
@@ -32,17 +36,57 @@
 
         </android.support.v4.view.ViewPager>
 
+
     </LinearLayout>
 
-    <Button
-        style="?android:attr/buttonStyleSmall"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/back_btn_lbl"
-        android:id="@+id/button2"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:onClick="onClickBackBtn" />
+        android:orientation="horizontal"
+        >
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+        <ImageButton
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/btn_giveUp"
+            android:layout_margin="2dp"
+            />
 
-</RelativeLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="I GIVE UP"
+                android:layout_gravity="right|center_vertical"
+                android:textColor="#ffffff"
+                android:textSize="20sp"
+                android:layout_marginRight="20dp" />
+        </FrameLayout>
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+        <ImageButton
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/btn_imGood"
+            android:layout_weight="1"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="I&apos;M GOOD!"
+                android:layout_gravity="left|center_vertical"
+                android:textColor="#ffffff"
+                android:textSize="20sp"
+                android:id="@+id/textView3"
+                android:layout_marginLeft="16dp" />
+        </FrameLayout>
+
+    </LinearLayout>
+
+
+
+</LinearLayout>
