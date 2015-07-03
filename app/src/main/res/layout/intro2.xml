@@ -17,7 +17,8 @@
         android:textColor="#ffffff"
         android:paddingRight="32dp"
         android:textSize="28sp"
-        android:text="Slide 2 title"/>
+        android:text="Whenever you get a craving."
+        />
 
     <LinearLayout
         android:layout_width="fill_parent"
@@ -32,7 +33,7 @@
             android:layout_gravity="center"
             android:paddingLeft="16dp"
             android:paddingRight="16dp"
-            android:src="@drawable/ic_slide2"/>
+            android:src="@drawable/craving_btn"/>
     </LinearLayout>
     <TextView
         android:layout_width="wrap_content"
@@ -44,7 +45,8 @@
         android:paddingLeft="64dp"
         android:paddingRight="64dp"
         android:textSize="16sp"
-        android:text="Loooooooooooooooo[...]ooooooooong descreption here"/>
+        android:text="Pressing the red &quot;I&apos;m Craving!&quot; Button notifies your support group so that they know what you&apos;re going through the moment you feel like doing your bad habit!"
+         />
     <TextView
         android:layout_width="fill_parent"
         android:layout_height="64dp" />

@@ -17,22 +17,25 @@
         android:textColor="#ffffff"
         android:paddingRight="32dp"
         android:textSize="28sp"
-        android:text="Slide 3 title"/>
+        android:text="We aren&apos;t your only support!"
+        />
 
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="0dp"
         android:orientation="vertical"
         android:gravity="center"
-        android:layout_weight="5">
+        android:layout_weight="5"
+        android:weightSum="1">
 
         <ImageView
-            android:layout_width="wrap_content"
+            android:layout_width="216dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:paddingLeft="16dp"
             android:paddingRight="16dp"
-            android:src="@drawable/ic_slide3"/>
+            android:src="@drawable/supportgroup_intro"
+            android:layout_weight="1.01" />
     </LinearLayout>
     <TextView
         android:layout_width="wrap_content"
@@ -44,7 +47,7 @@
         android:paddingLeft="64dp"
         android:paddingRight="64dp"
         android:textSize="16sp"
-        android:text="Loooooooooooooooo[...]ooooooooong descreption here"/>
+        android:text="Don't forget to add the people who are there to help you! Including friends, family and doctors to your support group help you beat your bad habit better!"/>
     <TextView
         android:layout_width="fill_parent"
         android:layout_height="64dp" />

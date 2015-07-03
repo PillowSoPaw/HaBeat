@@ -6,8 +6,7 @@
     android:paddingBottom="@dimen/activity_vertical_margin"
     tools:context="com.jtbmilan.habeat.selfhelp.selfmassage.SelfMassageActivity"
     android:background="#fffff9ef"
-    android:orientation="vertical"
-    android:id="@+id/">
+    android:orientation="vertical">
 
     <LinearLayout
         android:orientation="vertical"
@@ -51,7 +50,7 @@
         <ImageButton
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/btn_giveUp"
+            android:background="@drawable/btn_giveup"
             android:layout_margin="2dp"
             />
 
@@ -71,7 +70,7 @@
         <ImageButton
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/btn_imGood"
+            android:background="@drawable/btn_imgood"
             android:layout_weight="1"/>
 
             <TextView
